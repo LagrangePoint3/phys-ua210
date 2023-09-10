@@ -8,7 +8,6 @@ Created on Wed Sep  6 19:46:25 2023
 
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy.linalg import inv
 
 # Plot between -10 and 10 with 0.01 steps.
 x_axis = np.arange(-10, 10, 0.01)
@@ -19,8 +18,8 @@ sd = 3
 y = [np.exp(-(x-mean)**2/(2*sd**2))/(np.sqrt(2*np.pi*sd**2)) for x in x_axis]
   
 plt.plot(x_axis, y)
-plt.suptitle("gaussian.png.")
-plt.xlabel("range[-10,10]")
-plt.ylabel("probability")
+plt.suptitle("Gaussian.png.")
+plt.xlabel("range[-10,10] for x")
+plt.ylabel("Probability Density")
 plt.savefig("gaussian.png", dpi = 300)
 plt.show()
