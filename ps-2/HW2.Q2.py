@@ -25,9 +25,9 @@ def cal_M(L = None):
             for k in list_L:
                 if not i == j == k == 0:
                     if (i + j + k)%2 == 0:
-                        M_constant -= funcM(i,j,k)
-                    else:
                         M_constant += funcM(i,j,k)
+                    else:
+                        M_constant -= funcM(i,j,k)
                 
                 
     return M_constant
@@ -47,7 +47,7 @@ def cal_M2(L = None):
     mask_odd = (i + j + k)%2 != 0
     sum_odd = np.sum((i[mask_odd]**2 + j[mask_odd]**2 + k[mask_odd]**2)**(-1/2))
     
-    return sum_odd*2 - np.sum((i[mask]**2 + j[mask]**2 + k[mask]**2)**(-1/2))
+    return np.sum((i[mask]**2 + j[mask]**2 + k[mask]**2)**(-1/2)) - sum_odd*2
 
 L = 100
 
